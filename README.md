@@ -70,13 +70,13 @@ The head of sales asked for these, in these words. The notebook has a section fo
    in every column — were collapsed to one? (That is, rows minus distinct rows.)
 2. What was revenue over the whole file?
 3. Revenue by month, one row per month, in date order.
-4. Revenue by country outside the United Kingdom, with each country's share of that total, largest first. What share
-   came from Ireland?
+4. Revenue by country outside the United Kingdom, largest first. How much came from Ireland?
 5. The ten products with the most units sold.
 6. The ten products that brought in the most revenue. *Stretch.*
-7. The average revenue per identified customer, with the unidentified share of revenue beside it.
+7. The average revenue per identified customer, with the unidentified revenue beside it, and what fraction of
+   question 2's revenue that is (two numbers and one division).
 8. Revenue without the manual adjustments, and the number of sales lines it comes from.
-9. The weeks in which revenue was above £300,000, each with its revenue, in date order. *Stretch.*
+9. The five weeks with the highest revenue, each with its revenue, highest first. *Stretch.*
 
 Questions 1 to 5, 7 and 8 are the homework. Questions 6 and 9 are stretch: the same four parts, the same trap log,
 if you get there. Nothing in the rubric depends on them.
