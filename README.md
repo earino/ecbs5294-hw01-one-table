@@ -1,6 +1,6 @@
 # Homework 1 — One table, the weekly numbers
 
-**ECBS5294 — Working with Data · due Friday 9 October 2026, 23:59 (slot on Moodle)**
+**ECBS5294 — Working with Data · due Saturday 10 October 2026, 23:59 (slot on Moodle)**
 
 Budget about **3–4 hours** for the seven questions that are the homework. Two more, 6 and 9, are **stretch**: do them
 after the seven are answered and checked, or not at all. They are not graded. If you are well past the budget and
@@ -230,7 +230,7 @@ priced lines only — zero-priced lines are stock adjustments, not sales" — no
 ## Grading
 
 The rubric is on the course site. Correct answers 30 · verification 20 · the trap log 20 · the video 15 · clean
-submission and Git 10 · AI use 5. Late: one day at −10%; nothing after Saturday 23:59.
+submission and Git 10 · AI use 5. Late: one day at −10%; nothing after Sunday 23:59.
 
 ## If you got lost: how to reset
 
@@ -252,5 +252,5 @@ git reset --hard origin/main
 git clean -fdx
 ```
 
-> ⚠️ Discards your local commits and uncommitted changes. The `-x` also removes ignored files — `data/silver/`, the
-> `.venv/` environment — so the folder matches a fresh clone. `uv sync` rebuilds the environment in a minute.
+> ⚠️ Discards your local commits and uncommitted changes. The `-x` also removes every ignored file — `data/silver/`, the
+> `.venv/` environment, and anything else `.gitignore` lists, such as `.vscode/` and `.env` — so the folder matches a fresh clone. `uv sync` rebuilds the environment in a minute.
