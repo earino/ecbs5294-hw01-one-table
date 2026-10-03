@@ -2,10 +2,10 @@
 
 **ECBS5294 — Working with Data · due Saturday 10 October 2026, 23:59 (slot on Moodle)**
 
-Budget about **3–4 hours** for the seven questions that are the homework. Two more, 6 and 9, are **stretch**: do them
-after the seven are answered and checked, or not at all. They are not graded. If you are well past the budget and
-still stuck, post on the Moodle forum. That tells us something useful about the assignment, and it is not a mark
-against you.
+Budget about **5 hours** for the seven questions that are the homework, more if SQL is new to you; the note, the
+video and the archive are on top of that. Two more questions, 6 and 9, are **stretch**: do them after the seven are
+answered and checked, or not at all. They are not graded. If you are well past the budget and still stuck, post on
+the Moodle forum. That tells us something useful about the assignment, and it is not a mark against you.
 
 ## Start here
 
@@ -15,7 +15,7 @@ against you.
 | **The file** | `data/raw/online_retail.parquet`: every invoice line of a UK online gift shop, 1 December 2009 to 9 December 2010. |
 | **What can go wrong** | Every query you write will run. Some will be wrong, and none of them will say so. |
 | **What you hand in** | `hw1-submission.zip` and a 60–90 second video, on Moodle. |
-| **First thing to do** | Read the brief. Then run Block 1's four inspection queries on the file, before any question. |
+| **First thing to do** | Read the brief. Then the notebook's section 0, which lists what to inspect, and the worked example, which shows what a finished answer looks like. |
 
 ## Get the project
 
@@ -70,7 +70,8 @@ The head of sales asked for these, in these words. The notebook has a section fo
    in every column — were collapsed to one? (That is, rows minus distinct rows.)
 2. What was revenue over the whole file?
 3. Revenue by month, one row per month, in date order.
-4. Revenue by country outside the United Kingdom, largest first. How much came from Ireland?
+4. Revenue by country outside the United Kingdom, largest first. How much came from Ireland? (Check the census
+   for how the file writes the country you are asked about.)
 5. The ten products with the most units sold.
 6. The ten products that brought in the most revenue. *Stretch.*
 7. The average revenue per identified customer, with the unidentified revenue beside it, and what fraction of
@@ -86,8 +87,10 @@ population), **the query** (with the number of rows you expect, written before y
 fixes it, a range with a reason where only the file can), **the number** (with its unit), and **the check** (one
 query that would fail if the number were wrong, and one line saying what it shows). A sum is checked by an identity.
 A ranked list is not a sum: check it by counting the rows it returned, by reaching its top row's number a second way,
-and by showing the boundary — the lines of one thing the rule kept and of one it excluded — so the reader sees the
-rule at its edge.
+and by showing the boundary — one thing the rule kept beside one it excluded — so the reader sees the rule at its
+edge. For question 5 that is two rows: the units of one product in the ten, and the units of one code the product rule
+threw out (postage, say), from the same lines. **The notebook opens with a worked example**, a tenth question that is
+not graded, answered in all four parts: read it before you write question 1.
 Every code cell starts with its ID — `Q3` for question 3's query, `Q3 check` for its check — so that your trap log can
 cite it instead of pasting it again.
 
@@ -203,7 +206,9 @@ that now agree). Do not read a script.
 - **Never edit `data/raw/`.** The raw data is the evidence. Every number comes from a query on it.
 - **The brief is the definition.** Where a question and the file seem to disagree, the brief decides; say in the
   sentence which clause you applied.
-- **SQL does the analysis.** pandas only displays a result.
+- **SQL does the analysis.** Python may add, subtract, divide and compare the numbers you fetched with
+  `.fetchone()[0]`; a sum, a count or an average *over rows* is SQL, a query or a view, never `.sum()` or `.mean()` on
+  a dataframe. pandas displays a result; it does not compute the answer.
 - **AI is allowed**, and you must be able to explain every line you submit. Give the assistant the schema
   (`DESCRIBE`), the brief's sentence, and the number you expected; run the checks it suggests yourself.
 
@@ -211,11 +216,14 @@ that now agree). Do not read a script.
 
 1. Before question 2, run the census on the first character of `Invoice`, with `SUM(Quantity * Price)` beside each
    count. Then the census of every column the questions filter on. Read every row of the short ones; the long ones
-   (codes, descriptions) you count and slice by group, as in hint 3.
+   (codes, descriptions) you count and slice by group, as in hint 3. The notebook's section 0 lists what to look at.
 2. Find a second way to every number. Split the lines into groups that do not overlap: the groups must add back up to
    the whole. When they do not, the difference is a set of lines. List them.
 3. When a check closes and the number still surprises you, look at the lines behind it: `SELECT *`, the `WHERE` that
    picks that group, `LIMIT 20`. The trap is usually visible in twenty rows: a price, a code, a name, an empty cell.
+4. The brief says what a product is not, and gives no rule. Real product codes look alike: count the codes that do
+   not look like the others, read them, and write the rule the brief implies. The rule is yours to state in the
+   sentence; the boundary check shows it holds at its edge.
 
 ## Stretch
 
