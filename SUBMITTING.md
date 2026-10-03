@@ -34,7 +34,6 @@ Unzip `../hw1-submission.zip` somewhere new and look inside. It must contain:
 
 - `README.md`
 - `notebooks/report.ipynb`
-- `DIAGNOSIS.md`
 - `AI_USE.md`
 - `GIT_LOG.txt`
 - `DATA.md`, `LICENSE.md`, `data/raw/`
@@ -42,4 +41,4 @@ Unzip `../hw1-submission.zip` somewhere new and look inside. It must contain:
 It must **not** contain `.venv/`. The zip carries the course's copy of third-party data under each dataset's own
 license (`DATA.md`, `LICENSE.md`); it is for grading only.
 
-Upload to the Homework slot on Moodle: `hw1-submission.zip` and your video.
+Upload `hw1-submission.zip` to the Homework slot on Moodle. That is the whole submission.
