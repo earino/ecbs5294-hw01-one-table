@@ -92,7 +92,7 @@ check cell.
 1. **The sentence.** In plain English: what the number measures, which rows it comes from, and which rows the query
    left out.
 2. **The rows you expect, and why.** Written before you run the query, with its source: *the brief fixes it* ("one row
-   per month: 13"), or *a section 0 cell shows it* ("`I5`: 40 countries, one of them the UK, so 39"), or **"neither
+   per month: 13"), or *a section 0 cell shows it* ("`I5`: 40 values of `Country`, one of them the UK, so 39"), or **"neither
    fixes this"**. That last line is allowed. Nobody makes a number up.
 3. **The query, and the number** with its unit.
 4. **The check, in the kind the question names.** Three kinds, and each heading says which, so nobody has to invent a
